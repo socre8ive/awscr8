@@ -1,33 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cloud Compute - AWSCR8</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Compute - AWSCR8</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-  <!-- Include the same navbar from index.html -->
-  <!-- Paste the Hero Banner + Navbar section here -->
+    <!-- Hero Banner and Navigation -->
+    <div class="relative bg-teal-600 text-white text-center py-4">
+        <div class="max-w-6xl mx-auto flex items-center justify-center space-x-4">
+            <img src="awscr83.png" alt="AWSCR8 Logo" class="w-32">
+            <div>
+                <h1 class="text-2xl font-bold">Empowering Your Business with Cutting-Edge Solutions</h1>
+                <p class="mt-1 text-base">Optimizing operations, integrating seamlessly, and driving efficiency.</p>
+            </div>
+        </div>
+        <nav class="mt-4">
+            <div class="max-w-6xl mx-auto flex justify-center space-x-4">
+                <a href="index.html" class="text-lg font-semibold hover:text-gray-300">Home</a>
+                <a href="cloud-compute.html" class="text-lg font-semibold hover:text-gray-300">Cloud Compute</a>
+                <a href="developers.html" class="text-lg font-semibold hover:text-gray-300">Developers</a>
+                <a href="msp-services.html" class="text-lg font-semibold hover:text-gray-300">MSP Services</a>
+                <a href="platforms.html" class="text-lg font-semibold hover:text-gray-300">Platforms</a>
+                <a href="integrations.html" class="text-lg font-semibold hover:text-gray-300">Integrations</a>
+                <a href="contact.html" class="text-lg font-semibold hover:text-gray-300">Contact</a>
+            </div>
+        </nav>
+    </div>
 
-  <!-- Main Content -->
-  <div class="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-10 mt-10">
-    <h2 class="text-3xl font-bold text-teal-600">☁️ Cloud Compute</h2>
-    <p class="mt-4 text-gray-600">
-      We help businesses harness the power of the cloud to scale efficiently and securely. Our cloud computing services include:
-    </p>
-    <ul class="list-disc ml-6 mt-4 text-gray-700 space-y-2">
-      <li>Cloud migration and optimization (AWS, Azure, GCP)</li>
-      <li>Containerization with Docker & Kubernetes</li>
-      <li>Serverless architecture development</li>
-      <li>Infrastructure as Code (IaC) with Terraform/CloudFormation</li>
-      <li>Cost monitoring and compliance management</li>
-    </ul>
-  </div>
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-10 mt-10">
+        <h2 class="text-3xl font-bold text-teal-600">☁️ Cloud Compute</h2>
+        <p class="mt-4 text-gray-600">
+            AWSCR8 helps organizations unlock the full potential of the cloud. Our expert team designs, deploys, and manages secure, scalable cloud infrastructures that drive innovation and growth.
+        </p>
 
-  <!-- Include the same Call to Action section -->
-  <!-- Paste the Call to Action section from index.html here -->
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-teal-600">🔹 Cloud Migration</h3>
+                <p class="text-gray-700">Seamlessly transition workloads to AWS, Azure, or GCP. We assess your current environment and execute secure and efficient migration strategies.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-teal-600">🔹 Infrastructure as Code</h3>
+                <p class="text-gray-700">We use tools like Terraform and CloudFormation to define and provision cloud infrastructure in a repeatable and automated way.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-teal-600">🔹 Kubernetes & Containers</h3>
+                <p class="text-gray-700">Deploy and scale containerized applications using Kubernetes, Docker, and ECS. Improve performance and portability across environments.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-teal-600">🔹 Serverless Architectures</h3>
+                <p class="text-gray-700">Develop highly scalable and cost-effective applications with AWS Lambda, API Gateway, and more—no infrastructure to manage.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-teal-600">🔹 Cloud Security & Compliance</h3>
+                <p class="text-gray-700">Implement identity and access management (IAM), encryption, and monitoring to ensure your infrastructure is secure and compliant.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-teal-600">🔹 Cost Optimization</h3>
+                <p class="text-gray-700">Analyze your cloud usage and identify opportunities to reduce costs while maintaining performance and scalability.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-10">
+        <h2 class="text-2xl font-bold text-teal-600">✨ Ready to Scale in the Cloud?</h2>
+        <p class="text-gray-700 mt-2">🚀 Let’s design a cloud strategy tailored for your business success.</p>
+        <a href="mailto:contact@awscr8.com" class="mt-4 inline-block px-6 py-3 text-white bg-teal-600 hover:bg-teal-700 rounded-full text-lg">Contact Us</a>
+    </div>
 
 </body>
 </html>
