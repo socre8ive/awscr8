@@ -3,63 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AWSCR8 - Contact</title>
+  <title>Contact - AWSCR8</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("YOUR_USER_ID"); // Replace with your actual EmailJS public key
+    })();
+
+    function sendEmail(event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_5jz302t', 'Gmail', event.target)
+        .then(() => {
+          alert('✅ Message sent successfully!');
+          event.target.reset();
+        }, (error) => {
+          alert('❌ Error: ' + JSON.stringify(error));
+        });
+    }
+  </script>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-  <!-- Hero Banner + Nav -->
-  <div class="relative bg-teal-600 text-white text-center py-4">
-    <div class="max-w-6xl mx-auto flex items-center justify-center space-x-4">
-      <img src="awscr83.png" alt="AWSCR8 Logo" class="w-32" />
+  <!-- Header -->
+  <div class="bg-teal-600 text-white text-center py-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center space-x-0 md:space-x-4">
+      <img src="awscr83.png" alt="AWSCR8 Logo" class="w-24 mb-4 md:mb-0" />
       <div>
-        <h1 class="text-2xl font-bold">Get in Touch with AWSCR8</h1>
-        <p class="mt-1 text-base">We’re here to help your business thrive.</p>
+        <h1 class="text-2xl font-bold">Contact AWSCR8</h1>
+        <p>Let’s discuss how we can help your business grow</p>
       </div>
     </div>
+    <!-- Navigation -->
     <nav class="mt-4">
-      <div class="max-w-6xl mx-auto flex justify-center space-x-4">
-        <a href="index.html" class="text-lg font-semibold hover:text-gray-300">Home</a>
-        <a href="cloud-compute.html" class="text-lg font-semibold hover:text-gray-300">Cloud Compute</a>
-        <a href="developers.html" class="text-lg font-semibold hover:text-gray-300">Developers</a>
-        <a href="msp-services.html" class="text-lg font-semibold hover:text-gray-300">MSP Services</a>
-        <a href="platforms.html" class="text-lg font-semibold hover:text-gray-300">Platforms</a>
-        <a href="integrations.html" class="text-lg font-semibold hover:text-gray-300">Integrations</a>
-        <a href="contact.html" class="text-lg font-semibold hover:text-gray-300">Contact</a>
+      <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-4">
+        <a href="index.html" class="hover:text-gray-300">Home</a>
+        <a href="cloud-compute.html" class="hover:text-gray-300">Cloud Compute</a>
+        <a href="developers.html" class="hover:text-gray-300">Developers</a>
+        <a href="msp-services.html" class="hover:text-gray-300">MSP Services</a>
+        <a href="platforms.html" class="hover:text-gray-300">Platforms</a>
+        <a href="integrations.html" class="hover:text-gray-300">Integrations</a>
+        <a href="contact.html" class="font-semibold text-white underline">Contact</a>
       </div>
     </nav>
   </div>
 
-  <!-- Main Content -->
-  <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8 mt-10">
-    <h2 class="text-2xl font-bold text-teal-600 mb-6">Contact Us</h2>
-    
-    <p class="mb-6 text-gray-700">Have questions? Need a custom solution? Reach out and our team will get back to you promptly.</p>
-
-    <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
+  <!-- Contact Form -->
+  <div class="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-8 mt-10 mb-10">
+    <h2 class="text-2xl font-bold text-teal-600 mb-6">Send Us a Message</h2>
+    <form id="contact-form" onsubmit="sendEmail(event)" class="space-y-6">
       <div>
-        <label for="name" class="block font-semibold mb-1">Name</label>
-        <input id="name" name="name" required type="text" class="w-full border border-gray-300 rounded px-3 py-2" />
+        <label for="name" class="block font-medium mb-1">Name</label>
+        <input id="name" name="user_name" type="text" required class="w-full border border-gray-300 p-3 rounded" />
       </div>
       <div>
-        <label for="email" class="block font-semibold mb-1">Email</label>
-        <input id="email" name="email" required type="email" class="w-full border border-gray-300 rounded px-3 py-2" />
+        <label for="email" class="block font-medium mb-1">Email</label>
+        <input id="email" name="user_email" type="email" required class="w-full border border-gray-300 p-3 rounded" />
       </div>
       <div>
-        <label for="message" class="block font-semibold mb-1">Message</label>
-        <textarea id="message" name="message" required rows="5" class="w-full border border-gray-300 rounded px-3 py-2"></textarea>
+        <label for="message" class="block font-medium mb-1">Message</label>
+        <textarea id="message" name="message" rows="5" required class="w-full border border-gray-300 p-3 rounded"></textarea>
       </div>
       <button type="submit" class="bg-teal-600 text-white font-bold px-6 py-3 rounded hover:bg-teal-700">Send Message</button>
     </form>
 
-    <div class="mt-10 text-gray-700">
+    <!-- Contact Info -->
+    <div class="mt-10 text-gray-700 space-y-2">
       <p><strong>Email:</strong> <a href="mailto:contact@awscr8.com" class="text-teal-600 hover:underline">contact@awscr8.com</a></p>
       <p><strong>Phone:</strong> <a href="tel:+17032424295" class="text-teal-600 hover:underline">+1 (703) 242-4295</a></p>
-      <p><strong>Address:</strong> 4401 Wilson Boulevard Suite 700, Arlington, VA 22203</p>
+      <p><strong>Address:</strong> 4401 Wilson Boulevard, Suite 700, Arlington, VA 22203</p>
     </div>
 
     <!-- Embedded Google Map -->
-    <div class="mt-6">
+    <div class="mt-8">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.504178985168!2d-77.08674208464599!3d38.88222427957054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7b1e8e6fef9%3A0x87c47f420bbb3f18!2s4401%20Wilson%20Blvd%20%23700%2C%20Arlington%2C%20VA%2022203!5e0!3m2!1sen!2sus!4v1687015573142!5m2!1sen!2sus"
         width="100%"
@@ -67,7 +84,6 @@
         style="border:0;"
         allowfullscreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
         class="rounded-lg shadow"
       ></iframe>
     </div>
